@@ -14,7 +14,9 @@ jobs:
 
     - name: Validate JSON files
       run: |
+        shopt -s nullglob
         for file in bucket/*.json; do
+          if [ ! -f "$file" ]; then continue; fi
           if ! jq . "$file" > /dev/null; then
             echo "::error file=$file::Invalid JSON format"
             exit 1
@@ -23,7 +25,9 @@ jobs:
 
     - name: Check for Scoop manifest requirements
       run: |
+        shopt -s nullglob
         for file in bucket/*.json; do
+          if [ ! -f "$file" ]; then continue; fi
           # Basic check for required fields
           if ! jq -e '.version and .description and .homepage' "$file" > /dev/null; then
             echo "::error file=$file::Missing required manifest fields (version, description, or homepage)"
