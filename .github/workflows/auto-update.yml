@@ -1,0 +1,19 @@
+name: Auto Update
+
+on:
+  schedule:
+    - cron: '0 */2 * * *' # Every 2 hours
+  workflow_dispatch: # Allows manual trigger
+
+jobs:
+  update:
+    runs-on: windows-latest # Scoop and the update script require Windows
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Required for git operations
+
+      - name: Run Update Script
+        uses: ScoopInstaller/Action-Update@v2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
