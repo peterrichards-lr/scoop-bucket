@@ -1,28 +1,21 @@
 {
     "version": "1.0.0",
-    "description": "A tool to reset Liferay Cloud environments' databases.",
+    "description": "A Liferay Cloud utility to reset the database schema.",
     "homepage": "https://github.com/peterrichards-lr/lcp-db-reset",
     "license": "MIT",
-    "architecture": {
-        "64bit": {
-            "url": "https://github.com/peterrichards-lr/lcp-db-reset/releases/download/v1.0.0/lcp-db-reset-x86_64-pc-windows-msvc.zip",
-            "hash": "REPLACE_WITH_SHA256_HASH_OF_64BIT_ZIP"
-        },
-        "32bit": {
-            "url": "https://github.com/peterrichards-lr/lcp-db-reset/releases/download/v1.0.0/lcp-db-reset-i686-pc-windows-msvc.zip",
-            "hash": "REPLACE_WITH_SHA256_HASH_OF_32BIT_ZIP"
-        }
+    "url": "https://github.com/peterrichards-lr/lcp-db-reset/archive/refs/tags/v1.0.0.tar.gz",
+    "hash": "sha256:c39562ea41d208e8d09b2a227c2e68c4949db774e3ed391c19bd8ad10a91de65",
+    "extract_dir": "lcp-db-reset-1.0.0",
+    "depends": "rustup",
+    "installer": {
+        "script": "cargo install --path . --root \"$dir\""
     },
-    "bin": "lcp-db-reset.exe",
+    "bin": "bin/lcp-db-reset.exe",
     "checkver": "github",
     "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://github.com/peterrichards-lr/lcp-db-reset/releases/download/v$version/lcp-db-reset-x86_64-pc-windows-msvc.zip"
-            },
-            "32bit": {
-                "url": "https://github.com/peterrichards-lr/lcp-db-reset/releases/download/v$version/lcp-db-reset-i686-pc-windows-msvc.zip"
-            }
+        "url": "https://github.com/peterrichards-lr/lcp-db-reset/archive/refs/tags/v$version.tar.gz",
+        "hash": {
+            "url": "$url.sha256"
         }
     }
 }
