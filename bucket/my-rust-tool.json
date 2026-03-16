@@ -1,0 +1,31 @@
+{
+    "version": "0.1.0",
+    "description": "A sample Rust tool",
+    "homepage": "https://github.com/<user>/<repo>",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/<user>/<repo>/releases/download/v0.1.0/<tool>-x86_64-pc-windows-msvc.zip",
+            "hash": "<sha256-hash>"
+        },
+        "32bit": {
+            "url": "https://github.com/<user>/<repo>/releases/download/v0.1.0/<tool>-i686-pc-windows-msvc.zip",
+            "hash": "<sha256-hash>"
+        }
+    },
+    "bin": "my-rust-tool.exe",
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/<user>/<repo>/releases/download/v$version/<tool>-x86_64-pc-windows-msvc.zip"
+            },
+            "32bit": {
+                "url": "https://github.com/<user>/<repo>/releases/download/v$version/<tool>-i686-pc-windows-msvc.zip"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/hashes.txt"
+        }
+    }
+}
