@@ -8,12 +8,16 @@ on:
 jobs:
   update:
     runs-on: windows-latest # Scoop and the update script require Windows
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0 # Required for git operations
 
       - name: Run Update Script
-        uses: ScoopInstaller/Action-Update@v2
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+        uses: ScoopInstaller/GithubActions@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SKIP_UPDATED: '1'
+          THROW_ERROR: '0'
