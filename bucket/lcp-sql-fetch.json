@@ -14,8 +14,10 @@
     "checkver": "github",
     "autoupdate": {
         "url": "https://github.com/peterrichards-lr/lcp-sql-fetch/archive/refs/tags/v$version.tar.gz",
+        "extract_dir": "lcp-sql-fetch-$version",
         "hash": {
-            "url": "$url.sha256"
+            "url": "$url",
+            "mode": "download"
         }
     }
 }
