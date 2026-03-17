@@ -1,31 +1,23 @@
 {
     "version": "0.1.0",
-    "description": "A sample Rust tool",
+    "description": "Template for a Rust tool built from source",
     "homepage": "https://github.com/<user>/<repo>",
     "license": "MIT",
-    "architecture": {
-        "64bit": {
-            "url": "https://github.com/<user>/<repo>/releases/download/v0.1.0/<tool>-x86_64-pc-windows-msvc.zip",
-            "hash": "<sha256-hash>"
-        },
-        "32bit": {
-            "url": "https://github.com/<user>/<repo>/releases/download/v0.1.0/<tool>-i686-pc-windows-msvc.zip",
-            "hash": "<sha256-hash>"
-        }
+    "url": "https://github.com/<user>/<repo>/archive/refs/tags/v0.1.0.tar.gz",
+    "hash": "<sha256-hash>",
+    "extract_dir": "<repo>-0.1.0",
+    "depends": "rustup",
+    "installer": {
+        "script": "cargo install --path . --root \"$dir\""
     },
-    "bin": "my-rust-tool.exe",
+    "bin": "bin/<tool-binary-name>.exe",
     "checkver": "github",
     "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://github.com/<user>/<repo>/releases/download/v$version/<tool>-x86_64-pc-windows-msvc.zip"
-            },
-            "32bit": {
-                "url": "https://github.com/<user>/<repo>/releases/download/v$version/<tool>-i686-pc-windows-msvc.zip"
-            }
-        },
+        "url": "https://github.com/<user>/<repo>/archive/refs/tags/v$version.tar.gz",
+        "extract_dir": "<repo>-$version",
         "hash": {
-            "url": "$baseurl/hashes.txt"
+            "url": "$url",
+            "mode": "download"
         }
     }
 }
