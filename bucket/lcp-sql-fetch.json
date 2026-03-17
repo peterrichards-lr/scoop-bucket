@@ -8,8 +8,11 @@
     "extract_dir": "lcp-sql-fetch-1.0.1",
     "depends": "rustup",
     "installer": {
-        "script": "cargo install --path \"$dir\" --root \"$dir\""
-    }
+        "script": [
+            "Set-Location \"$dir\"",
+            "cargo install --path . --root \"$dir\""
+        ]
+    },
     "bin": "bin/lcp-sql-fetch.exe",
     "checkver": "github",
     "autoupdate": {
