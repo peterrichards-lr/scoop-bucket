@@ -1,16 +1,16 @@
 {
-    "version": "1.0.0",
-    "description": "A CLI tool to automatically update the Liferay Workspace Gradle plugin to its latest version",
+    "version": "1.0.1",
+    "description": "A CLI tool to automatically update Liferay Workspace components to their latest versions",
     "homepage": "https://github.com/peterrichards-lr/liferay-workspace-updater",
     "license": "MIT",
-    "url": "https://github.com/peterrichards-lr/liferay-workspace-updater/archive/refs/tags/v1.0.0.tar.gz",
-    "hash": "ce325d97a4bfb498ed6f26d086448a39af56c1ddeaab8981bcbe5c720239b9a2",
-    "extract_dir": "liferay-workspace-updater-1.0.0",
+    "url": "https://github.com/peterrichards-lr/liferay-workspace-updater/archive/refs/tags/v1.0.1.tar.gz",
+    "hash": "d132537f7690623e1e5702a50157d699ae31ced2fcb00d3fd135720e48b67db8",
+    "extract_dir": "liferay-workspace-updater-1.0.1",
     "depends": "rustup",
     "installer": {
         "script": [
-            "Set-Location "$dir"",
-            "cargo install --path . --root "$dir""
+            "Set-Location \"$$dir\"",
+            "cargo install --path . --root \"$$dir\""
         ]
     },
     "bin": "bin/lwu.exe",
