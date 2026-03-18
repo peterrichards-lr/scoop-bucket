@@ -1,11 +1,11 @@
 {
     "version": "1.0.0",
     "description": "A CLI tool to automatically update the Liferay Workspace Gradle plugin to its latest version",
-    "homepage": "https://github.com/peterrichards-lr/lwu",
+    "homepage": "https://github.com/peterrichards-lr/liferay-workspace-updater",
     "license": "MIT",
-    "url": "https://github.com/peterrichards-lr/lwu/archive/refs/tags/v1.0.0.tar.gz",
-    "hash": "8d309f7196dda3763101e6a65681e312aa1169a4a736cee10c2d5dda654eb7c6",
-    "extract_dir": "lwu-1.0.0",
+    "url": "https://github.com/peterrichards-lr/liferay-workspace-updater/archive/refs/tags/v1.0.0.tar.gz",
+    "hash": "ce325d97a4bfb498ed6f26d086448a39af56c1ddeaab8981bcbe5c720239b9a2",
+    "extract_dir": "liferay-workspace-updater-1.0.0",
     "depends": "rustup",
     "installer": {
         "script": [
@@ -16,8 +16,8 @@
     "bin": "bin/lwu.exe",
     "checkver": "github",
     "autoupdate": {
-        "url": "https://github.com/peterrichards-lr/lwu/archive/refs/tags/v$version.tar.gz",
-        "extract_dir": "lwu-$version",
+        "url": "https://github.com/peterrichards-lr/liferay-workspace-updater/archive/refs/tags/v$version.tar.gz",
+        "extract_dir": "liferay-workspace-updater-$version",
         "hash": {
             "url": "$url",
             "mode": "download"
