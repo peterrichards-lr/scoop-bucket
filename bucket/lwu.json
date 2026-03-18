@@ -1,0 +1,26 @@
+{
+    "version": "1.0.0",
+    "description": "A CLI tool to automatically update the Liferay Workspace Gradle plugin to its latest version",
+    "homepage": "https://github.com/peterrichards-lr/automatic-potato",
+    "license": "MIT",
+    "url": "https://github.com/peterrichards-lr/automatic-potato/archive/refs/tags/v1.0.0.tar.gz",
+    "hash": "bbb4ae97b6da0e4d2f51a4a3aedf0af116f070e2cc214ee1be82e23cebd9a4f5",
+    "extract_dir": "automatic-potato-1.0.0",
+    "depends": "rustup",
+    "installer": {
+        "script": [
+            "Set-Location "$dir"",
+            "cargo install --path . --root "$dir""
+        ]
+    },
+    "bin": "bin/lwu.exe",
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/peterrichards-lr/automatic-potato/archive/refs/tags/v$version.tar.gz",
+        "extract_dir": "automatic-potato-$version",
+        "hash": {
+            "url": "$url",
+            "mode": "download"
+        }
+    }
+}
