@@ -23,7 +23,7 @@ scoop install <tool-name>
 
 This bucket is designed to be self-updating and reliable using GitHub Actions.
 
-1.  **JSON Linting (`lint.yml`)**: Every push or Pull Request is automatically checked to ensure all JSON manifests are valid and contain the required fields (`version`, `description`, `homepage`).
+1.  **JSON Linting (`scripts/lint.sh`)**: All changes are automatically checked locally before you commit. This ensures all JSON manifests are valid and contain the required fields (`version`, `description`, `homepage`). To set this up, run `./scripts/setup-hooks.sh`.
 2.  **Auto-Update (`auto-update.yml`)**: Every 2 hours, a GitHub Action checks all manifests in the `bucket/` directory. If it finds a new release in a tool's GitHub repository, it automatically:
     - Downloads the new binary.
     - Calculates the new SHA256 hashes.
