@@ -9,17 +9,17 @@
     "depends": "rustup",
     "installer": {
         "script": [
-            "Set-Location \"\$dir\"",
-            "cargo install --path . --root \"\$dir\""
+            "Set-Location \"$dir\"",
+            "cargo install --path . --root \"$dir\""
         ]
     },
     "bin": "bin/lwu.exe",
     "checkver": "github",
     "autoupdate": {
-        "url": "https://github.com/peterrichards-lr/liferay-workspace-updater/archive/refs/tags/v\$version.tar.gz",
-        "extract_dir": "liferay-workspace-updater-\$version",
+        "url": "https://github.com/peterrichards-lr/liferay-workspace-updater/archive/refs/tags/v$version.tar.gz",
+        "extract_dir": "liferay-workspace-updater-$version",
         "hash": {
-            "url": "\$url",
+            "url": "$url",
             "mode": "download"
         }
     }
