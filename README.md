@@ -53,11 +53,14 @@ Once you push the new `.json` file to this repository, the **Auto-Update** actio
 
 ## 📜 Available Tools
 
+<!-- TOOLS_LIST_START -->
 The following tools are available in this bucket:
 
-- **[lcp-db-reset](https://github.com/peterrichards-lr/lcp-db-reset)**: A Liferay Cloud utility to reset the database schema.
-- **[lcp-sql-fetch](https://github.com/peterrichards-lr/lcp-sql-fetch)**: A tool to execute local SQL scripts on Liferay Cloud via lcp shell.
-- **[lwu (Liferay Workspace Updater)](https://github.com/peterrichards-lr/liferay-workspace-updater)**: A CLI tool to automatically update Liferay Workspace components to their latest versions.
+- **[lcp-db-reset](https://github.com/peterrichards-lr/lcp-db-reset)**: A high-performance Rust CLI utility to reset Liferay Cloud (LCP) database schemas.
+- **[lcp-sql-fetch](https://github.com/peterrichards-lr/lcp-sql-fetch)**: Professional CLI tool to execute local SQL scripts on Liferay Cloud databases and fetch results securely.
+- **[lfr-tunnel](https://github.com/peterrichards-lr/lfr-tunnel)**: A secure, self-hosted tunneling solution for Liferay instances and client extensions, routing traffic from wildcard subdomains to local developer environments with automated SSL and offline support.
+- **[lwu](https://github.com/peterrichards-lr/liferay-workspace-updater)**: A CLI tool to automatically update the Liferay Workspace Gradle plugin to its latest version
+<!-- TOOLS_LIST_END -->
 
 ---
 
