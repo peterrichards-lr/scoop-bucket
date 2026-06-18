@@ -53,7 +53,11 @@ Once you push the new `.json` file to this repository, the **Auto-Update** actio
 
 ## 📜 Available Tools
 
-- *No tools added yet. See `bucket/my-rust-tool.json.example` for a template.*
+The following tools are available in this bucket:
+
+- **[lcp-db-reset](https://github.com/peterrichards-lr/lcp-db-reset)**: A Liferay Cloud utility to reset the database schema.
+- **[lcp-sql-fetch](https://github.com/peterrichards-lr/lcp-sql-fetch)**: A tool to execute local SQL scripts on Liferay Cloud via lcp shell.
+- **[lwu (Liferay Workspace Updater)](https://github.com/peterrichards-lr/liferay-workspace-updater)**: A CLI tool to automatically update Liferay Workspace components to their latest versions.
 
 ---
 
