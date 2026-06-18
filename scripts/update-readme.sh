@@ -28,15 +28,29 @@ for file in bucket/*.json; do
     desc=$(echo "$repo_data" | jq -r '.description')
     
     # Extract topics (tags) and format them as a comma-separated string
-    # E.g. `rust`, `cli`, `liferay` becomes `*rust, cli, liferay*`
     topics=$(echo "$repo_data" | jq -r 'if .topics and length > 0 then .topics | join(", ") else "" end')
+    
+    # Fetch the remote README to get the friendly title
+    # We check main first, then master if main fails
+    remote_readme=$(curl -sL -f "https://raw.githubusercontent.com/$repo_path/main/README.md" || curl -sL -f "https://raw.githubusercontent.com/$repo_path/master/README.md" || echo "")
+    
+    # Extract the first H1 header
+    friendly_name=$(echo "$remote_readme" | grep -m 1 '^# ' | sed 's/^# //')
+    
+    # Clean up markdown formatting (like backticks) from the title
+    friendly_name=$(echo "$friendly_name" | sed 's/`//g')
+    
+    # Fallback to file toolname if README title isn't found
+    if [ -z "$friendly_name" ]; then
+        friendly_name="$toolname"
+    fi
     
     # Fallback to local description if API fails or returns null
     if [ -z "$desc" ] || [ "$desc" = "null" ]; then
         desc=$(jq -r '.description' "$file")
     fi
     
-    TOOLS_LIST+="- **[$toolname]($homepage)**: $desc\n"
+    TOOLS_LIST+="- **[$friendly_name]($homepage)**: $desc\n"
     
     # Add tags if they exist
     if [ -n "$topics" ]; then
