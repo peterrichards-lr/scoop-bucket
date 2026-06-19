@@ -20,6 +20,10 @@ for file in bucket/*.json; do
     # Fetch repository data from GitHub API
     if command -v gh >/dev/null 2>&1; then
         repo_data=$(gh api "repos/$repo_path")
+    elif [ -n "$GH_TOKEN" ]; then
+        repo_data=$(curl -s -H "Authorization: token $GH_TOKEN" "https://api.github.com/repos/$repo_path")
+    elif [ -n "$GITHUB_TOKEN" ]; then
+        repo_data=$(curl -s -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/repos/$repo_path")
     else
         repo_data=$(curl -s "https://api.github.com/repos/$repo_path")
     fi
