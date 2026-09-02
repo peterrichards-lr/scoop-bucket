@@ -1,12 +1,12 @@
 {
-  "version": "1.48.20",
+  "version": "1.48.21",
   "description": "Secure HTTPS tunnel client for Liferay Sales Engineering team",
   "homepage": "https://github.com/peterrichards-lr/lfr-tunnel",
   "license": "MIT",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/peterrichards-lr/lfr-tunnel/releases/download/v1.48.20/lfr-tunnel-windows-amd64.exe#/lfr-tunnel.exe",
-      "hash": "1be9d935a1bc0d507b5cd1c6291514be17a17311a4ac4c18552ce02f6b5401f1"
+      "url": "https://github.com/peterrichards-lr/lfr-tunnel/releases/download/v1.48.21/lfr-tunnel-windows-amd64.exe#/lfr-tunnel.exe",
+      "hash": "482174c397301909b25a462655c77dc161aeb523ffadcab030a7d65c14149b76"
     }
   },
   "bin": [
