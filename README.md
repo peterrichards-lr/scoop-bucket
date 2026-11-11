@@ -62,6 +62,7 @@ The following tools are available in this bucket:
   <br>*(Tags: cli, database-management, devops, lcp, liferay, liferay-cloud, mysql, postgresql, rust, sql)*
 - **[Liferay Services Updater (lcp-svc-update)](https://github.com/peterrichards-lr/lcp-svc-update)**: Liferay Services Updater - Automated CLI tool to update Liferay Cloud service Docker image references (LCP.json) from the official Liferay Cloud services changelog.
   <br>*(Tags: automation, cli, devops, docker, dxp, json, lcp, liferay, liferay-cloud, liferay-experience-cloud, lxc, paas, rust, scraping)*
+- **[lfr-local](https://github.com/peterrichards-lr/lfr-local)**: A CLI tool to configure and run side-by-side Liferay instances within a local workspace.
 - **[lfr-mock-gen](https://github.com/peterrichards-lr/lfr-mock-gen)**: A blazing-fast Rust CLI tool that uses Gemini AI to generate realistic mock Web Content and pushes it directly to Liferay via Headless REST APIs.
 - **[Liferay Tunnel (lfr-tunnel)](https://github.com/peterrichards-lr/lfr-tunnel)**: A secure, self-hosted tunneling solution for Liferay instances and client extensions, routing traffic from wildcard subdomains to local developer environments with automated SSL and offline support.
   <br>*(Tags: chisel, go, liferay, reverse-proxy, sales-engineering, tunnel)*
