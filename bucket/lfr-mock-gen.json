@@ -1,0 +1,26 @@
+{
+    "version": "1.0.1",
+    "description": "Liferay Mock Content Generator - Blazing-fast CLI tool using Gemini AI to generate realistic mock Web Content.",
+    "homepage": "https://github.com/peterrichards-lr/lfr-mock-gen",
+    "license": "MIT",
+    "url": "https://github.com/peterrichards-lr/lfr-mock-gen/archive/refs/tags/v1.0.1.tar.gz",
+    "hash": "4cc6a905e0a3657d931a4db8628c8c415f30855b962c03c998ee2e9b0cfcfe5c",
+    "extract_dir": "lfr-mock-gen-1.0.1",
+    "depends": "rustup",
+    "installer": {
+        "script": [
+            "Set-Location \"$dir\"",
+            "cargo install --path . --root \"$dir\""
+        ]
+    },
+    "bin": "bin/lfr-mock-gen.exe",
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/peterrichards-lr/lfr-mock-gen/archive/refs/tags/v$version.tar.gz",
+        "extract_dir": "lfr-mock-gen-$version",
+        "hash": {
+            "url": "$url",
+            "mode": "download"
+        }
+    }
+}
