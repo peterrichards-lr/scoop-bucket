@@ -1,0 +1,26 @@
+{
+    "version": "1.1.0",
+    "description": "Liferay Services Updater - Update Liferay Cloud service Docker image references (LCP.json).",
+    "homepage": "https://github.com/peterrichards-lr/lcp-svc-update",
+    "license": "MIT",
+    "url": "https://github.com/peterrichards-lr/lcp-svc-update/archive/refs/tags/v1.1.0.tar.gz",
+    "hash": "d730bb3867d1a9b39b244bdabee85359dca1375943c6b661e4f6c346ec57bc58",
+    "extract_dir": "lcp-svc-update-1.1.0",
+    "depends": "rustup",
+    "installer": {
+        "script": [
+            "Set-Location \"$dir\"",
+            "cargo install --path . --root \"$dir\""
+        ]
+    },
+    "bin": "bin/lcp-svc-update.exe",
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/peterrichards-lr/lcp-svc-update/archive/refs/tags/v$version.tar.gz",
+        "extract_dir": "lcp-svc-update-$version",
+        "hash": {
+            "url": "$url",
+            "mode": "download"
+        }
+    }
+}
