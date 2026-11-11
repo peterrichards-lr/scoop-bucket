@@ -28,7 +28,7 @@ This bucket is designed to be self-updating and reliable using GitHub Actions.
     - Downloads the new binary.
     - Calculates the new SHA256 hashes.
     - Updates the manifest version and URLs.
-    - Commits the changes back to this repository.
+    - Opens a pull request labelled `no-issue-needed` and squash-merges it (`main` only accepts pull requests).
 
 ---
 
